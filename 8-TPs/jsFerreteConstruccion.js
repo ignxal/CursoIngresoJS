@@ -12,7 +12,7 @@ var treshilo;
 
 largo = parseInt(document.getElementById("Largo").value);
 ancho = parseInt(document.getElementById("Ancho").value);
-treshilo = (2 * (largo * ancho) * 3);
+treshilo = (2 * (largo + ancho) * 3);
 
 alert("Se debe comprar " + treshilo + "de alambre");
 
@@ -43,7 +43,8 @@ var cal;
 
 largo = parseInt(document.getElementById("Largo").value);
 ancho = parseInt(document.getElementById("Ancho").value);
-terreno = (2 * (largo * ancho));
+
+terreno = (largo * ancho);
 cemento = (2 * terreno);
 cal = (3 * terreno);
 
