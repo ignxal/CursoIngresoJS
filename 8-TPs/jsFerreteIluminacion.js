@@ -10,67 +10,66 @@ E.	Si el importe final con porcDescuento suma más de $120  se debe sumar un 10%
  */
 function CalcularPrecio () 
 {
-     var precio = 35;
-     var cantidad;
-     var marca;
-     var porcDescuento;
-     var descuento;
-     var PconD;
-     var importefinal;
-     var IIBB;
-
-     cantidad = parseInt(document.getElementById("Cantidad").value);
-     marca = parseInt(document.getElementById("Marca").value);
-
-     switch (cantidad) {
-         case 1:
-         case 2:
-             porcDescuento = 0;
-             break;
-         case 3:
-             if (marca == "ArgentinaLuz") {
-                 porcDescuento = 15;
-             }
-             else if (marca == "FelipeLamparas") {
-                 porcDescuento = 10;
-             }
-             else {
-                 porcDescuento = 5;
-             }
-             break;
-         case 4:
-             if (marca == "ArgentinaLuz" || marca == "FelipeLamparas") {
-                 
-             }
-             break;
-         case 5:
-         if (marca == "ArgentinaLuz") {
-             porcDescuento = 40;
-         }
-         else {
-             porcDescuento = 30;
-         }
-             break;
-         default:
-             porcDescuento = 50;
-             break;
-     }
+    var precio = 35;
+    var cantidad;
+    var marca;
+    var Pdescuento;
+    var descuento;
+    var PconD;
+    var IIBB;
+    var Pfinal;
     
-    descuento = precio * porcDescuento / 100;
+    marca = document.getElementById("Marca").value;
+    cantidad = parseInt(document.getElementById("Cantidad").value);
 
-    // calculo precio final
-    PconD = precio - descuento;
+    switch (cantidad) {
+        case 1:
+        case 2: Pdescuento = 0
+            break;
+        case 3:
+        if (marca== "ArgentinaLuz") {
+            Pdescuento = 15 / 100;
+        }
+        else if (marca== "FelipeLamparas") {
+            Pdescuento = 10 / 100;
+        }
+        else {
+            Pdescuento = 5 / 100;
+        }
+        case 4:
+        if (marca== "ArgentinaLuz" || marca== "FelipeLamparas") {
+            Pdescuento = 25 / 100;
+        }
+        else {
+            Pdescuento = 20 / 100;
+        }
+        break;
+        case 5:
+        if (marca == "ArgentinaLuz") {
+            Pdescuento = 40 / 100;
+        }
+        else { 
+            Pdescuento = 30 / 100;
+        }
+        break;
+        default: 
+        Pdescuento = 50 / 100
+        break;
+    }
+
+    descuento = precio * Pdescuento;
+
+    PconD = (precio - descuento);
     document.getElementById("precioDescuento").value = PconD;
 
-    importefinal = PconD * cantidad;
+    Pfinal = PconD * cantidad;
 
-    if (importeFinal > 120){
-        IIBB = importeFinal * 10 / 100;
-        importeFinal = importeFinal + IIBB;
-        alert("El importe final es $ " + importeFinal + " \nIngresos brutos. Usted pago $ " + IIBB);
+    if (Pfinal>120) {
+    IIBB = Pfinal * 10 / 100;
+    Pfinal = Pfinal + IIBB;
+    alert("Usted pago $" + IIBB + " de IIBB. Total = $ " + Pfinal);
     }
     else {
-        alert("El importe final es $ " + importeFinal);
+    alert("Usted no paga IIBB. Total = $ " + Pfinal);
     }
-
 }
