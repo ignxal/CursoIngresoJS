@@ -1,18 +1,15 @@
 function mostrar()
 {
-
-	var contador=0;
-	//declarar contadores y variables 
-	
-	var respuesta="si";
-
-	while(respuesta!="no")
-	{
-		
-	
-	}
-
-
+Acumulador
+Acumulador
+Contador
+Contador
+Contador
+Contador
+Promedio
+Promedio
+Diferencia
+If(numero%2==0)
 
 
 }//FIN DE LA FUNCIÓN
