@@ -32,7 +32,7 @@ else {
 if (numero%2==0) {
     ConPares = ConPares + 1
 }
-respuesta = prompt("Desea ingresar otro numero?");    
+respuesta = prompt("Desea ingresar otro numero?").toLowerCase();    
 } while (respuesta == 'si');
 
 ProPositivo = AcuPositivo / ConPositivo;
