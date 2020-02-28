@@ -2,15 +2,15 @@ function mostrar()
 {
 var numero;
 var respuesta = 'si';
-var AcuPositivo = 0;
-var AcuNegativo = 0;
-var ConPositivo = 0;
-var ConNegativo = 0;    
-var ConCeros = 0;
-var ConPares = 0;
-var ProPositivo;
-var ProNegativo;
-var Diferencia;
+var acuPositivo = 0;
+var acuNegativo = 0;
+var conPositivos = 0;
+var conNegativos = 0;    
+var conCeros = 0;
+var conPares = 0;
+var proPositivo;
+var proNegativo;
+var diferencia;
 
 do {
     numero = parseInt(prompt("Ingrese un numero"));
@@ -18,35 +18,35 @@ do {
     numero = parseInt(prompt("Error. Eso no es un numero"));
     }
 if (numero >= 0) {
-    ConPositivo = ConPositivo + 1;
-    AcuPositivo = AcuPositivo + numero;
+    conPositivos = conPositivos + 1;
+    acuPositivo = acuPositivo + numero;
     if (numero == 0) {
-        ConCeros = ConCeros + 1;
+        conCeros = conCeros + 1;
     }
 }
 else {
-    ConNegativo = ConNegativo + 1;
-    AcuNegativo = AcuNegativo + numero;
+    conNegativos = conNegativos + 1;
+    acuNegativo = acuNegativo + numero;
 }
 
 if (numero%2==0) {
-    ConPares = ConPares + 1
+    conPares = conPares + 1
 }
 respuesta = prompt("Desea ingresar otro numero?").toLowerCase();    
 } while (respuesta == 'si');
 
-ProPositivo = AcuPositivo / ConPositivo;
-ProNegativo = AcuNegativo / ConNegativo;
-Diferencia = AcuPositivo + AcuNegativo;
+proPositivo = acuPositivo / conPositivos;
+proNegativo = acuNegativo / conNegativos;
+diferencia = acuPositivo - acuNegativo;
 
-document.write("La suma de positivos es: " + AcuPositivo + 
-"<br> La suma de negativos es: " + AcuNegativo + 
-"<br> La cantidad de positivos es: " + ConPositivo +
-"<br> La cantidad de negativos es: " + ConNegativo +
-"<br> La cantidad de ceros es " + ConCeros + 
-"<br> La cantidad de numeros pares es: " + ConPares + 
-"<br> El promedio de positivos es: " + ProPositivo +
-"<br> El promedio de negativos es: " + ProNegativo + 
-"<br> La diferencia de positivos y negativos es " + Diferencia);
+document.write("La suma de positivos es: " + acuPositivo + 
+"<br> La suma de negativos es: " + acuNegativo + 
+"<br> La cantidad de positivos es: " + conPositivos +
+"<br> La cantidad de negativos es: " + conNegativos +
+"<br> La cantidad de ceros es " + conCeros + 
+"<br> La cantidad de numeros pares es: " + conPares + 
+"<br> El promedio de positivos es: " + proPositivo +
+"<br> El promedio de negativos es: " + proNegativo + 
+"<br> La diferencia de positivos y negativos es " + diferencia);
 
 }
