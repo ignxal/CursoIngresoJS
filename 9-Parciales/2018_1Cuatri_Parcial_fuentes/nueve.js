@@ -34,7 +34,7 @@ do {
                 marcapesoMax = marca;
                 pesoMax = peso;
                 }
-                if (flag == 0 || peso<pesoMin) {
+            if (flag == 0 || peso<pesoMin) {
                 pesoMin = peso;
                 flag = 1;
                 }
