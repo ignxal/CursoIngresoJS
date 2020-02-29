@@ -17,13 +17,13 @@ do {
     while (isNaN(numero)) {
     numero = parseInt(prompt("Error. Eso no es un numero"));
     }
-if (numero >= 0) {
+if (numero > 0) {
     conPositivos = conPositivos + 1;
     acuPositivo = acuPositivo + numero;
-    if (numero == 0) {
+}
+else if (numero == 0) {
         conCeros = conCeros + 1;
     }
-}
 else {
     conNegativos = conNegativos + 1;
     acuNegativo = acuNegativo + numero;
