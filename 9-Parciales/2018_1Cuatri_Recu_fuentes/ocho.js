@@ -8,7 +8,7 @@ var canImpares = 0;
 var canCeros = 0;
 var canPositivos = 0;
 var acuPositivos = 0;
-var promPositivos;
+var promPositivos = 0;
 var acuNegativos = 0;
 var maxLetra;
 var maxNumero;
@@ -18,6 +18,9 @@ var flag = 0;
 
 do {
     letra = prompt("Ingrese una letra");
+    while (!((letra>= 'A' && letra<='Z')) || ((letra>='a' && letra <= 'z')) ) {
+        letra = prompt ("Dato invalido. Reingrese letra");
+    }
     numero = parseInt(prompt("Ingrese un numero"));
     while (numero>100 || numero<-100 || isNaN(numero)) {
         numero = parseInt(prompt("Numero invalido. Reingrese numero (-100-100"));

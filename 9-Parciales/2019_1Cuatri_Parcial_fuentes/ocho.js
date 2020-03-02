@@ -8,7 +8,7 @@ var canImpar = 0;
 var canCero = 0;
 var acuPositivo = 0;
 var canPositivo = 0;
-var promPositivo;
+var promPositivo = 0;
 var acuNegativo = 0;
 var numeroMax;
 var letraMax;
@@ -54,7 +54,9 @@ do {
 seguir = prompt("Desea ingresar otro dato?").toLowerCase();    
 } while (seguir =='s');
 
+if (canPositivo!= 0) {
 promPositivo = acuPositivo / canPositivo;
+}
 
 document.write("Cantidad numeros par: " + canPar +
 "</br> Cantidad numeros impar: " + canImpar + 

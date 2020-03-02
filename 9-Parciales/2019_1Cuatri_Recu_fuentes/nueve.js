@@ -9,16 +9,16 @@ var canVaronesAprobados = 0;
 var promNotaMenores;
 var acuNotaMenores = 0;
 var conNotaMenores = 0;
-var promNotaAdolescentes;
+var promNotaAdolescentes = 0;
 var acuNotaAdolescentes = 0;
 var conNotaAdolescentes = 0;
-var promNotaMayores;
+var promNotaMayores = 0;
 var acuNotaMayores = 0;
 var conNotaMayores = 0;
-var promNotaMasculino;
+var promNotaMasculino = 0;
 var acuNotaMasculino = 0;
 var conNotaMasculino = 0;
-var promNotaFemenino;
+var promNotaFemenino = 0;
 var acuNotaFemenino = 0;
 var conNotaFemenino = 0;
 
@@ -52,7 +52,7 @@ do {
     if (sexo == 'm') {
         acuNotaMasculino = acuNotaMasculino + nota;
         conNotaMasculino++;
-        if (nota>=6) {
+        if (nota>=4) {
             canVaronesAprobados++;
         }
     } else {
@@ -60,15 +60,41 @@ do {
         conNotaFemenino++;
     }
 
+    /*Informar el sexo de la persona con la mayor nota adolescentes
+    else if (edad>=13 && edad<18) {
+        acuNotaAdolescentes= acuNotaAdolescentes + nota;
+        conNotaAdolescentes++;
+        if (flag == 0 || nota>notaMax)
+        notaMax = nota;
+        nombreMax = nombre;
+        sexoMax = sexo;
+        flag = 1;
+
+        if (contadorAdolescente == 0) ´{
+            document.write("No se ingresaron adolescentes");
+        }
+            else {
+                document.write("")
+        }
+*/
     seguir = prompt("Desea ingresar otro dato?");
 } while (seguir == 's');
 
+if (conNotaMenores != 0) {
 promNotaMenores = acuNotaMenores / conNotaMenores;
+}
+if (conNotaAdolescentes != 0) {
 promNotaAdolescentes = acuNotaAdolescentes / conNotaAdolescentes;
+}
+if (conNotaMayores != 0) {
 promNotaMayores = acuNotaMayores / conNotaMayores;
+}
+if (conNotaMasculino !=0) {
 promNotaMasculino = acuNotaMasculino / conNotaMasculino;
+}
+if (conNotaFemenino != 0) {
 promNotaFemenino = acuNotaFemenino / conNotaFemenino;
-
+}
 document.write("Cantidad de varones aprobados: " + canVaronesAprobados +
 "</br>Promedio nota menores: " + promNotaMenores + 
 "</br>Promedio nota adolescentes: " + promNotaAdolescentes +

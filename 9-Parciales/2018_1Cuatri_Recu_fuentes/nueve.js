@@ -9,12 +9,13 @@ var nombreMax;
 var pesoMax;
 var tempMax;
 var bajoceroAnimal = 0;
-var bajoceromaxPeso = 0; //asi funciona pero esta mal
-var bajocerominPeso = 1001; //asi funciona pero esta mal
+var bajoceromaxPeso;
+var bajocerominPeso;
 var promPeso;
 var acuPeso = 0;
 var canAnimal = 0;
 var flag = 0;
+var flag2 = 0;
 
 do {
     animal = prompt("Ingrese nombre del animal");
@@ -38,20 +39,22 @@ do {
         tempMax = temperatura;
         flag = 1;
     }
-//preguntar como se hace asi funciona pero esta mal porque si no hay bajocero quedan def como 0 y 1001.
+//preguntar
     // c) y f)
     if (temperatura<0) {
         bajoceroAnimal++;
-        if (peso>bajoceromaxPeso) {
+        if (flag2 == 0 || peso>bajoceromaxPeso) {
             bajoceromaxPeso = peso;
         }
-        if (peso<bajocerominPeso) {
+        if (flag2 == 0 || peso<bajocerominPeso) {
             bajocerominPeso = peso;
+            flag2 = 1;
         }
    /* asi NO funciona porque si la temp es mayor a 0 no cancela flag
    if (flag == 0 || pesoMax<peso) {
         nombreMax = animal;
         tempMax = temperatura;
+        flag = 1;
     }
     if (temperatura<0) {
             bajoceroAnimal++;

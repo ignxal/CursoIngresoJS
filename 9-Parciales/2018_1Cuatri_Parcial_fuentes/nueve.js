@@ -24,12 +24,22 @@ do {
             while (temperatura>30 || temperatura<-30) {
                 temperatura = parseInt(prompt("Error, temperatura no valida"));
             }
+            //a)
             if (temperatura%2==0) {
                 temperaturaPar = temperaturaPar + 1;
+            //c)
             }
             if (temperatura<0) {
                 productosBajoCero = productosBajoCero + 1;
             }
+            //b) y f)
+            /* marca del producto mas pesado que no sea congelado temp>0
+            if ((flag2 = 0 || peso>pesoMax) && temperatura>0) {
+                marcapesoMax = marca;
+                pesoMax = peso;
+                flag2 = 1;
+            }*/
+
             if (flag == 0 || peso>pesoMax) {
                 marcapesoMax = marca;
                 pesoMax = peso;

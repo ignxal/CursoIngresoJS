@@ -4,10 +4,10 @@ var letra;
 var numero;
 var respuesta = 'si';
 var canPares = 0;
-var canInpares = 0;
+var canImpares = 0;
 var canCeros = 0;
 var canPositivos = 0;
-var promPositivos;
+var promPositivos = 0;
 var sumaPositivos = 0;
 var sumaNegativos = 0;
 var maximo;
@@ -18,6 +18,9 @@ var flag = 0;
 
 do {
     letra = prompt("Ingrese una letra");
+    while (!((letra>= 'A' && letra<='Z')) || ((letra>='a' && letra <= 'z')) ) {
+         letra = prompt("Dato no valido. Ingrese una letra");
+    }
 
     numero = parseInt(prompt("Ingrese un número"));
          while (numero < -100 || numero > 100 || isNaN(numero)) {
@@ -27,11 +30,9 @@ do {
          canPares = canPares + 1;
     }
     else {
-         canInpares = canInpares +1;
+         canImpares = canImpares +1;
     }
-    if (numero == 0) {
-         canCeros = canCeros + 1;
-    }
+
     if (flag == 0 || numero>maximo) {
          maximo = numero;
          letraMax = letra;
@@ -45,17 +46,22 @@ do {
         canPositivos = canPositivos + 1;
         sumaPositivos = sumaPositivos + numero;
         }
-    else {
+     else if (numero == 0) {
+          canCeros = canCeros + 1;
+     }
+     else {
         sumaNegativos = sumaNegativos + numero;
     }
 
     respuesta = prompt("Desea continuar ingresando datos?").toLowerCase();
 } while (respuesta == 'si');
 
+if (canPositivos!=0) {
 promPositivos = sumaPositivos / canPositivos;
+}
 
 document.write("Cantidad de pares " + canPares + 
-"<br>Cantidad de inpares " + canInpares +
+"<br>Cantidad de inpares " + canImpares +
 "<br>Cantidad de ceros " + canCeros + 
 "<br>Promedio de positivos: " + promPositivos +
 "<br>Suma de negativos: " + sumaNegativos +
